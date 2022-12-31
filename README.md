@@ -1,0 +1,1 @@
+# larastan-architecture-rules
