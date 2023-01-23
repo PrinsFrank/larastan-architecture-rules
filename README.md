@@ -127,3 +127,23 @@ parameters:
     Usage of the global function "env" is highly dependent on a booted application and makes this code tightly coupled. Instead, Set the environment key in a configuration file so configuration caching doesn't break your application, inject Illuminate\Config\Repository and use method "get".
     Usage of the global function "abort" is highly dependent on a booted application and makes this code tightly coupled. Instead, Inject Illuminate\Contracts\Foundation\Application and use method "abort".
 </details>
+
+### NoRegisteredServicesInBootMethodProviderRule
+
+Nesting ServiceProviders by calling the register method in the boot method of other service providers causes issues when these providers have dependencies between eachother and results in a non-optimized booting of Laravel. This rule prevents this.
+
+This rule is enabled by default. You can disable it by adding the following to your `phpstan.neon` file;
+```neon
+parameters:
+    disallowRegisteringServiceProvidersInBootMethodProvider: false
+```
+
+### UnitTestsShouldExtendFromBasePHPUnitTestCase
+
+Tests in the 'Unit' namespace should be real Unit tests and should not boot the Laravel framework in any way. This rule disallows extending from the internal 'testCase' class or any custom class that boots the framework.
+
+This rule is enabled by default. You can disable it by adding the following to your `phpstan.neon` file;
+```neon
+parameters:
+    disallowNonPureUnitTests: false
+```
