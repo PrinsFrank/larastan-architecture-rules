@@ -4,7 +4,7 @@
 
 Except for a small subset of functions, most of the global helpers in laravel are dependent in some way or another on the state of a booted application. And while these functions are convenient ways to shorten the amount of code you have to write, they couple your code with the Laravel codebase. And furthermore, they decrease the testability of your codebase. This rule prevents the usage of those specific coupled helper methods, while still allowing usage of the other functions that don't rely on a booted application. for more information, see this [blog post](https://prinsfrank.nl/2022/09/20/How-to-write-decoupled-unit-tests-in-Laravel).
 
-This rule is enabled by default. You can enable it by adding
+This rule is enabled by default. You can disable it by adding
 ```neon
 parameters:
     disallowedHelpersDependingOnBootedApplication: false
