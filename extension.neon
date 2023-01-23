@@ -1,17 +1,22 @@
 parameters:
     disallowedHelpersDependingOnBootedApplication: true
     disallowRegisteringServiceProvidersInBootMethodProvider: true
+    disallowNonPureUnitTests: true
 
 parameterSchema:
     disallowedHelpersDependingOnBootedApplication: bool()
     disallowRegisteringServiceProvidersInBootMethodProvider: bool()
+    disallowNonPureUnitTests: bool()
 
 conditionalTags:
     PrinsFrank\LarastanArchitectureRules\Rules\NoHelperDependingOnBootedApplicationUsageRule:
         phpstan.rules.rule: %disallowedHelpersDependingOnBootedApplication%
     PrinsFrank\LarastanArchitectureRules\Rules\NoRegisteredServicesInBootMethodProviderRule:
         phpstan.rules.rule: %disallowRegisteringServiceProvidersInBootMethodProvider%
+    PrinsFrank\LarastanArchitectureRules\Rules\UnitTestsShouldExtendFromBasePHPUnitTestCase:
+        phpstan.rules.rule: %disallowNonPureUnitTests%
 
 rules:
     - PrinsFrank\LarastanArchitectureRules\Rules\NoHelperDependingOnBootedApplicationUsageRule
     - PrinsFrank\LarastanArchitectureRules\Rules\NoRegisteredServicesInBootMethodProviderRule
+    - PrinsFrank\LarastanArchitectureRules\Rules\UnitTestsShouldExtendFromBasePHPUnitTestCase
