@@ -11,10 +11,8 @@ parameters:
 ```
 to your `phpstan.neon` file.
 
-### Examples
-
 <details>
-    <summary>Expand code sample</summary>
+    <summary>Sample code & errors</summary>
 
     The following code
 
