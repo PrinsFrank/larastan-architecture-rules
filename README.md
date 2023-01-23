@@ -17,7 +17,7 @@ to your `phpstan.neon` file.
     <summary>Expand code sample</summary>
 
     The following code
-    <code>
+
     app_path();
     base_path();
     config_path();
@@ -67,11 +67,9 @@ to your `phpstan.neon` file.
     cache();
     env();
     abort();
-    </code>
     
     Will result in the following errors:
     
-    <code>
     Usage of the global function "app_path" is highly dependent on a booted application and makes this code tightly coupled. Instead, Inject Illuminate\Contracts\Foundation\Application and use method "path".
     Usage of the global function "base_path" is highly dependent on a booted application and makes this code tightly coupled. Instead, Inject Illuminate\Contracts\Foundation\Application and use method "basePath".
     Usage of the global function "config_path" is highly dependent on a booted application and makes this code tightly coupled. Instead, Inject Illuminate\Contracts\Foundation\Application and use method "configPath".
@@ -121,5 +119,4 @@ to your `phpstan.neon` file.
     Usage of the global function "cache" is highly dependent on a booted application and makes this code tightly coupled. Instead, Inject Illuminate\Cache\CacheManager and use method "get".
     Usage of the global function "env" is highly dependent on a booted application and makes this code tightly coupled. Instead, Set the environment key in a configuration file so configuration caching doesn't break your application, inject Illuminate\Config\Repository and use method "get".
     Usage of the global function "abort" is highly dependent on a booted application and makes this code tightly coupled. Instead, Inject Illuminate\Contracts\Foundation\Application and use method "abort".
-    </code>
 </details>
