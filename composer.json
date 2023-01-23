@@ -2,6 +2,7 @@
     "name": "prinsfrank/larastan-architecture-rules",
     "type": "library",
     "license": "MIT",
+    "description": "Architecture rules for Laravel applications",
     "keywords": ["static analysis", "phpstan", "laravel", "php", "package", "code analysis"],
     "autoload": {
         "psr-4": {
