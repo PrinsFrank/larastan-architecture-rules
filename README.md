@@ -11,7 +11,9 @@ This is an opinionated set of Larastan rules for Corporate Laravel applications 
 
 To start using this package, run the following command;
 
+```shell
 composer require prinsfrank/larastan-architecture-rules --dev
+```
 
 ## Rules
 
