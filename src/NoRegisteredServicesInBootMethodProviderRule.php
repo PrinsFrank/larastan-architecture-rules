@@ -13,7 +13,7 @@ use PHPStan\Rules\RuleErrorBuilder;
 /**
  * @implements Rule<MethodCall>
  */
-class NoRegisteredServicesInBootMethodProvider implements Rule
+class NoRegisteredServicesInBootMethodProviderRule implements Rule
 {
     public function getNodeType(): string
     {
