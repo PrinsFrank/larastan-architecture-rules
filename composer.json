@@ -1,0 +1,26 @@
+{
+    "name": "prinsfrank/larastan-architecture-rules",
+    "type": "library",
+    "license": "MIT",
+    "keywords": ["static analysis", "phpstan", "laravel", "php", "package", "code analysis"],
+    "autoload": {
+        "psr-4": {
+            "PrinsFrank\\LarastanArchitectureRules\\": "src/"
+        }
+    },
+    "extra": {
+        "phpstan": {
+            "includes": [
+                "extension.neon"
+            ]
+        }
+    },
+    "require": {
+        "php": "^8.0",
+        "nunomaduro/larastan": "^2.4",
+        "phpstan/phpstan": "^1.9"
+    },
+    "require-dev": {
+        "nikic/php-parser": "^4.15"
+    }
+}
