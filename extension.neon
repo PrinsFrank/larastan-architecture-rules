@@ -1,12 +1,17 @@
 parameters:
     disallowedHelpersDependingOnBootedApplication: true
+    disallowRegisteringServiceProvidersInBootMethodProvider: true
 
 parameterSchema:
     disallowedHelpersDependingOnBootedApplication: bool()
+    disallowRegisteringServiceProvidersInBootMethodProvider: bool()
 
 conditionalTags:
     PrinsFrank\LarastanArchitectureRules\Rules\NoHelperDependingOnBootedApplicationUsageRule:
         phpstan.rules.rule: %disallowedHelpersDependingOnBootedApplication%
+    PrinsFrank\LarastanArchitectureRules\Rules\NoRegisteredServicesInBootMethodProvider:
+        phpstan.rules.rule: %disallowRegisteringServiceProvidersInBootMethodProvider%
 
 rules:
     - PrinsFrank\LarastanArchitectureRules\Rules\NoHelperDependingOnBootedApplicationUsageRule
+    - PrinsFrank\LarastanArchitectureRules\Rules\NoRegisteredServicesInBootMethodProvider
