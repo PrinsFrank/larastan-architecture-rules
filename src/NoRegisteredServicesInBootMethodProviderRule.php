@@ -44,8 +44,8 @@ class NoRegisteredServicesInBootMethodProviderRule implements Rule
         return [
             RuleErrorBuilder::message(
                 'Service providers should not be registered in boot methods of other service providers as that will ' .
-                'create conflicts when service providers depend on each other. Please register them in the register 
-                method or the kernel instead.'
+                'create conflicts when service providers depend on each other. Please register them in the register ' .
+                'method or the kernel instead.'
             )->line($node->getLine())->build(),
         ];
     }
