@@ -1,0 +1,12 @@
+parameters:
+    disallowedHelpersDependingOnBootedApplication: true
+
+parameterSchema:
+    disallowedHelpersDependingOnBootedApplication: bool()
+
+conditionalTags:
+    PrinsFrank\LarastanArchitectureRules\Rules\NoHelperDependingOnBootedApplicationUsageRule:
+        phpstan.rules.rule: %disallowedHelpersDependingOnBootedApplication%
+
+rules:
+    - PrinsFrank\LarastanArchitectureRules\Rules\NoHelperDependingOnBootedApplicationUsageRule
