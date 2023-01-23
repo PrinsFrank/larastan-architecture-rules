@@ -1,3 +1,8 @@
+<picture>
+  <source srcset="docs/images/banner_dark.png" media="(prefers-color-scheme: dark)">
+  <img src="docs/images/banner_light.png" alt="Banner">
+</picture>
+
 # Larastan Architecture Rules
 
 This is an opinionated set of Larastan rules for Corporate Laravel applications using PHPStan. Each rule can be disabled individually, but it is recommended to use the full set of rules
