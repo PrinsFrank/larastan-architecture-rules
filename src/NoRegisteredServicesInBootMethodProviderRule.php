@@ -37,7 +37,11 @@ class NoRegisteredServicesInBootMethodProviderRule implements Rule
 
         /** @var Node\Expr\Variable $var */
         $var = $propertyFetch->var;
-        if ((string) $propertyFetch->name !== 'app' || (string) $var->name !== 'this' || (string) $node->name !== 'register') {
+        if ($propertyFetch->name instanceof Node\Identifier === false
+            || (string) $propertyFetch->name !== 'app'
+            || $var->name !== 'this'
+            || $node->name instanceof Node\Identifier === false
+            || (string) $node->name !== 'register') {
             return [];
         }
 
